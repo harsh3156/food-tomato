@@ -1,0 +1,233 @@
+/* =========================
+   ROOT COLORS
+========================= */
+:root {
+    --bg-dark: #0b0b0b;
+    --bg-glass: rgba(255,255,255,0.05);
+    --accent: #ff4d00;
+    --accent-glow: rgba(255,77,0,.6);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+}
+
+/* =========================
+   NAVBAR CONTAINER
+========================= */
+.navbar {
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(
+        180deg,
+        rgba(20,20,20,.95),
+        rgba(10,10,10,.95)
+    );
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.6),
+        inset 0 0 0 1px rgba(255,255,255,.05);
+
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+.navbar .logo {
+    width: 150px;
+    filter: drop-shadow(0 0 12px var(--accent-glow));
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+/* =========================
+   MENU
+========================= */
+.navbar-menu {
+    display: flex;
+    gap: 28px;
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.navbar-menu li {
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* underline lava animation */
+.navbar-menu li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #ff944d);
+    border-radius: 10px;
+    transition: .35s ease;
+}
+
+.navbar-menu li:hover {
+    color: #fff;
+}
+
+.navbar-menu li:hover::after {
+    width: 100%;
+}
+
+.navbar .active {
+    color: #fff;
+}
+
+.navbar .active::after {
+    width: 100%;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* search + cart */
+.navbar-right img {
+    width: 22px;
+    filter: brightness(1.1);
+    cursor: pointer;
+    transition: transform .3s, filter .3s;
+}
+
+.navbar-right img:hover {
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 0 8px var(--accent));
+}
+
+/* =========================
+   BUTTON (ORDER / LOGIN)
+========================= */
+.navbar button {
+    background: linear-gradient(135deg, #ff4d00, #ff8c42);
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: .3px;
+
+    box-shadow:
+        0 10px 30px rgba(255,77,0,.45),
+        inset 0 0 0 1px rgba(255,255,255,.15);
+
+    transition: .35s;
+}
+
+.navbar button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 18px 45px rgba(255,77,0,.65);
+}
+
+/* =========================
+   CART DOT
+========================= */
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulseDot 1.5s infinite;
+}
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+.navbar-profile {
+    position: relative;
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 120%;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+
+    background: rgba(15,15,15,.95);
+    backdrop-filter: blur(14px);
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,77,0,.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    animation: dropdownFade .4s ease;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-profile-dropdown li:hover {
+    color: var(--accent);
+    transform: translateX(6px);
+}
+
+.nav-profile-dropdown img {
+    width: 20px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes pulseDot {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,0,.7); }
+    70% { box-shadow: 0 0 0 12px rgba(255,77,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,0,0); }
+}
+
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 8px rgba(255,77,0,.4)); }
+    50% { filter: drop-shadow(0 0 18px rgba(255,77,0,.8)); }
+    100% { filter: drop-shadow(0 0 8px rgba(255,77,0,.4)); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:900px) {
+    .navbar-menu {
+        display: none;
+    }
+}

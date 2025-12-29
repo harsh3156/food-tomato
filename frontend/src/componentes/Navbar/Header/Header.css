@@ -1,0 +1,201 @@
+/* =========================
+   HERO HEADER – BLACK ORANGE
+========================= */
+.header {
+    height: 38vw;
+    margin: 30px auto;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #0d0d0d;
+
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.9),
+        inset 0 0 120px rgba(255,94,0,0.25);
+
+    animation: bgSlider 12s infinite alternate;
+}
+
+/* IMAGE SLIDER */
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.9),
+            rgba(0,0,0,0.4)
+        ),
+        url('../../../assets/header_img.png') center/cover no-repeat;
+    animation: imageZoom 12s infinite ease-in-out;
+}
+
+/* ORANGE GLOW OVERLAY */
+.header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255,102,0,0.45), transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(255,132,0,0.35), transparent 60%);
+    animation: glowMove 6s infinite alternate;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.header-contents {
+    position: absolute;
+    z-index: 2;
+    bottom: 15%;
+    left: 6vw;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6vw;
+
+    animation: contentReveal 1.4s ease-out forwards;
+}
+
+/* TITLE */
+.header-contents h2 {
+    font-size: max(4vw, 28px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 25px rgba(255,102,0,0.9),
+        0 0 60px rgba(255,102,0,0.6);
+
+    animation: fireText 3s infinite alternate;
+}
+
+/* DESCRIPTION */
+.header-contents p {
+    font-size: 1.1vw;
+    color: #d1d1d1;
+    max-width: 90%;
+    opacity: 0.9;
+}
+
+/* CTA BUTTON */
+.header-contents button {
+    width: fit-content;
+    padding: 1.1vw 2.8vw;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+
+    font-size: max(1vw, 15px);
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    background: linear-gradient(135deg, #ff4d00, #ff8c00);
+    color: #000;
+
+    box-shadow:
+        0 0 20px rgba(255,102,0,0.8),
+        0 0 60px rgba(255,102,0,0.6);
+
+    transition: transform .3s ease;
+    animation: neonPulse 2.5s infinite;
+}
+
+.header-contents button:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes bgSlider {
+    0% { background-color: #0b0b0b; }
+    100% { background-color: #000; }
+}
+
+@keyframes imageZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+@keyframes glowMove {
+    0% { opacity: .6; }
+    100% { opacity: 1; }
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fireText {
+    from {
+        text-shadow:
+            0 0 15px rgba(255,102,0,0.6),
+            0 0 40px rgba(255,102,0,0.4);
+    }
+    to {
+        text-shadow:
+            0 0 30px rgba(255,102,0,1),
+            0 0 80px rgba(255,102,0,.8);
+    }
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(255,102,0,0.6);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255,102,0,1);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255,102,0,0.6);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:1050px) {
+    .header {
+        height: 45vw;
+    }
+    .header-contents {
+        max-width: 65%;
+    }
+}
+
+@media (max-width:750px) {
+    .header {
+        height: 60vw;
+    }
+    .header-contents {
+        max-width: 85%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 2.5vw 6vw;
+    }
+
+    .header {
+    --glow: 20px;
+    background: #0b0b0b;
+    box-shadow:
+        0 0 var(--glow) rgba(255,102,0,0.8),
+        inset 0 0 calc(var(--glow) * 2) rgba(255,102,0,0.4);
+    transition: box-shadow .1s linear;
+}
+
+}

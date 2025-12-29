@@ -1,0 +1,116 @@
+.Padd1 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: #ffc139;
+    border-radius: 50px;
+    padding: 2px 16px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.Padd1:hover {
+    background-color: black;
+    color: #ffc139;
+}
+
+/* img {
+    max-width: auto;
+    height: 100%;
+} */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.Pmain-prodetail {
+  padding-bottom: 1rem;
+  padding-top: 5rem;
+}
+
+.Pcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Prow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.Pcolumn {
+  flex: 1;
+  padding: 0 1.875rem; 
+  box-sizing: border-box;
+}
+
+.Pprice {
+  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.Pprice-value {
+  font-size: 36px;
+  color: #FFC139;
+}
+
+.Pcurrency {
+  color: #FFC139;
+}
+
+.Ptitle {
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  padding-top: 16px;
+}
+
+.Psubtitle {
+  font-size: 64px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #333;
+  padding-top: 16px;
+}
+
+.Pdescription {
+  color: #333;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.3px;
+  padding-top: 1rem;
+}
+
+.Padd-button {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.Padd-button a {
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+}
+
+.Pimage-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.Pimage-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Pcenter {
+  display: flex;
+  justify-content: center;
+}

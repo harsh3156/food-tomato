@@ -1,0 +1,64 @@
+/* Main container */
+.app-download {
+    margin: 100px auto 0 auto; /* Combined margin shorthand */
+    font-size: max(3vw, 20px);
+    text-align: center;
+    font-weight: 500;
+    color: #333; /* Elegant text color */
+    animation: fadeInUp 1s ease forwards; /* Smooth entry animation */
+    opacity: 0; /* Initial for animation */
+}
+
+/* Platforms container */
+.app-download-platform {
+    display: flex;
+    justify-content: center;
+    gap: max(2vw, 15px); /* Slightly bigger gap for comfort */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Responsive wrap */
+}
+
+/* Platform icons */
+.app-download-platform img {
+    width: max(30vw, 120px);
+    max-width: 180px;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 15px; /* Rounded edges for modern look */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Hover effect */
+.app-download-platform img:hover {
+    transform: scale(1.1) rotate(-2deg); /* Slight rotation + zoom */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: add bounce animation on hover */
+.app-download-platform img:hover {
+    animation: bounce 0.6s;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+    40% {
+        transform: scale(1.15) rotate(2deg);
+    }
+    60% {
+        transform: scale(1.12) rotate(-1deg);
+    }
+}

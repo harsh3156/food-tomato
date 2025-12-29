@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff3e6; /* light pizza theme background */
+  color: #333;
+  overflow-x: hidden;
+  animation: bgPulse 8s infinite alternate;
+}
+
+/* Smooth Background Animation */
+@keyframes bgPulse {
+  0% { background-color: #fff3e6; }
+  50% { background-color: #fff0d1; }
+  100% { background-color: #fff3e6; }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #FF6347; /* pizza-red links */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  color: #FF4500;
+  transform: scale(1.05);
+}
+
+/* Lists */
+li {
+  list-style: none;
+}
+
+/* Main App Container */
+.app {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Buttons */
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #FF6347, #FFD700); /* pizza red to cheese yellow */
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255,99,71,0.3);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,99,71,0.4);
+}
+
+/* Images */
+img {
+  border-radius: 15px;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 10px 20px rgba(255,165,0,0.3);
+}
+
+/* Sections Fade-In Animation */
+section {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+/* Fade Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Pizza Elements (optional decorative icons) */
+.pizza-floating {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+}
+
+/* Card UI for dishes */
+.card {
+  background-color: #fff8f0;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px rgba(255,99,71,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255,99,71,0.3);
+}
+
+/* Typography Animations */
+h1, h2, h3 {
+  position: relative;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
