@@ -1,35 +1,54 @@
-.Padd1 {
-    font-size: 24px;
-    font-weight: 300;
-    color: #ffffff;
-    background-color: #ffc139;
-    border-radius: 50px;
-    padding: 2px 16px;
-    cursor: pointer;
-    transition: .4s;
-}
-
-.Padd1:hover {
-    background-color: black;
-    color: #ffc139;
-}
-
-/* img {
-    max-width: auto;
-    height: 100%;
-} */
-
+/* ---------- GLOBAL ---------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .Pmain-prodetail {
-  padding-bottom: 1rem;
-  padding-top: 5rem;
+  animation: fadeUp 1s ease-in-out;
 }
 
+
+/* ---------- BUTTON ---------- */
+.Padd1 {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #ffc139;
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(255, 193, 57, 0.4);
+}
+
+.Padd1:hover {
+  background-color: black;
+  color: #ffc139;
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- MAIN SECTION ---------- */
+.Pmain-prodetail {
+  padding: 5rem 0 1rem;
+  animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- CONTAINER ---------- */
 .Pcontainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -41,12 +60,46 @@ body {
   gap: 1.25rem;
 }
 
+/* ---------- SLIDING COLUMNS ---------- */
 .Pcolumn {
   flex: 1;
-  padding: 0 1.875rem; 
+  padding: 0 1.875rem;
   box-sizing: border-box;
 }
 
+/* Left content slide */
+.Pcolumn.left {
+  animation: slideLeft 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Right image slide */
+.Pcolumn.right {
+  animation: slideRight 2.2s ease forwards;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- PRICE ---------- */
 .Pprice {
   font-size: 18px;
   color: #333;
@@ -54,15 +107,13 @@ body {
   letter-spacing: 2px;
 }
 
-.Pprice-value {
+.Pprice-value,
+.Pcurrency {
   font-size: 36px;
   color: #FFC139;
 }
 
-.Pcurrency {
-  color: #FFC139;
-}
-
+/* ---------- TITLES ---------- */
 .Ptitle {
   font-size: 36px;
   font-weight: 400;
@@ -80,36 +131,41 @@ body {
   padding-top: 16px;
 }
 
+/* ---------- DESCRIPTION ---------- */
 .Pdescription {
   color: #333;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1.3px;
   padding-top: 1rem;
+  line-height: 1.8;
 }
 
-.Padd-button {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.Padd-button a {
-  text-decoration: none;
-  color: #000;
-  font-size: 24px;
-}
-
+/* ---------- IMAGE ---------- */
 .Pimage-container {
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 .Pimage-container img {
   max-width: 100%;
   height: auto;
+  transition: transform 0.5s ease;
 }
 
+.Pimage-container img:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- CENTER ---------- */
 .Pcenter {
   display: flex;
   justify-content: center;
