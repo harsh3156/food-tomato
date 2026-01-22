@@ -13,4 +13,4 @@ export const connectDB = async () => {
 
 
 
-//mongodb+srv://smit:5000Smit@cluster0.mz27n.mongodb.net/food-website
+//mongodb+srv://smit:5000Smit@cluster0.mz27n.mongodb.net/food-websitegit 
